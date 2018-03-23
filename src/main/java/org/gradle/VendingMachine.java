@@ -3,13 +3,13 @@ package org.gradle;
 public class VendingMachine {
 
 	public static boolean existeProducto(Producto producto, String codigoProducto) {
-		return (producto.getCodigoProducto().equals(codigoProducto));
+		return producto.getCodigoProducto().equals(codigoProducto);
 
 	}
 
 	public static boolean existenciaStock(Producto producto1) {
 
-		return (producto1.getStockProducto() > 0);
+		return producto1.getStockProducto() > 0;
 	}
 
 	public static int ingresoDinero(int[] dinero) {
@@ -19,14 +19,14 @@ public class VendingMachine {
 			totalDinero += dinero[i];
 		}
 
-		return (totalDinero);
+		return totalDinero;
 	}
 
 	public static boolean ingresoDineroAlcanza(Producto producto1, int[] dinero) {
 
 		int totalDinero = ingresoDinero(dinero);
 
-		return (totalDinero >= producto1.getPrecioProducto());
+		return totalDinero >= producto1.getPrecioProducto();
 
 	}
 
@@ -58,5 +58,14 @@ public class VendingMachine {
 		
 		return 0;
 	}
+
+	/*public static boolean existeProductoArreglo(Producto[] producto, String codigoProducto) {
+		for (int i = 0; i < producto.length; i++) {
+			producto[i].codigoProducto.equals(codigoProducto);
+			return true;
+		}
+		
+		return false;
+	}*/
 
 }

@@ -10,7 +10,7 @@ public class VendingMachineTest {
 	
 	public  VendingMachine vendingMachine;
 	public Producto producto1;
-	public Producto producto2;
+	public Maquina[] maquina; //Arreglo de productos
 	
 	@Before
 	public void setup() {
@@ -22,12 +22,32 @@ public class VendingMachineTest {
 		producto1.setNombreProducto("Cholatina JET");
 		producto1.setStockProducto(50);
 		
-		producto2 = new Producto();
-		producto2.setCodigoProducto("B10");
-		producto2.setPrecioProducto(3000);
-		producto2.setNombreProducto("Arequipe");
-		producto2.setStockProducto(10);
+			
+		/*producto[1]= new Producto();
+		producto[1].setCodigoProducto("C10");
+		producto[1].setPrecioProducto(500);
+		producto[1].setNombreProducto("Chitos");
+		producto[1].setStockProducto(25);
+		*/
+				
 	}
+	
+	
+	
+	/*@Test
+	public void ingresoExisteProductoCodigoyObtengoObjetoProductoArreglo() {
+		// arrange definicion de la variables
+		
+		
+		String codigoProducto="B10";
+		
+		// act- accion
+				
+		boolean resultado = VendingMachine.existeProductoArreglo(producto, codigoProducto);
+		
+		// assert
+		assertTrue(resultado);
+	}*/
 	
 	
 	
@@ -50,9 +70,6 @@ public class VendingMachineTest {
 	public void existeExistenciayObtengoAfirmacion() {
 		// arrange definicion de la variables
 		
-		
-		//String codigoProducto="B10";
-		
 		// act- accion
 				
 		boolean resultado = VendingMachine.existenciaStock(producto1);
@@ -65,9 +82,7 @@ public class VendingMachineTest {
 	@Test
 	public void ingresoDineroyObtengoSumatoria() {
 		// arrange definicion de la variables
-		int dinero[]= {100, 500, 2000};
-		
-		//String codigoProducto="B10";
+		int[] dinero= {100, 500, 2000};
 		
 		// act- accion
 				
@@ -81,9 +96,7 @@ public class VendingMachineTest {
 	@Test
 	public void ingresoDineroyObtengoSiAlcanza() {
 		// arrange definicion de la variables
-		int dinero[]= {100, 500, 2000};
-		
-		//String codigoProducto="B10";
+		int[] dinero= {100, 500, 2000};
 		
 		// act- accion
 				
@@ -96,7 +109,7 @@ public class VendingMachineTest {
 	@Test
 	public void ingresoDineroyObtengoDevueltaSiAlcanza() {
 		// arrange definicion de la variables
-		int dinero[]= {100, 500, 2000};
+		int[] dinero= {100, 500, 2000};
 		
 		// act- accion
 				
@@ -122,7 +135,7 @@ public class VendingMachineTest {
 	@Test
 	public void validarEntregaProducto() {
 		// arrange definicion de la variables
-		int dinero[]= {100, 500, 2000};
+		int[] dinero= {100, 500, 2000};
 		String codigoProducto="A10";
 		
 		// act- accion
@@ -136,7 +149,7 @@ public class VendingMachineTest {
 	@Test
 	public void validarNoEntregaProducto() {
 		// arrange definicion de la variables
-		int dinero[]= {100, 500, 200};
+		int[] dinero= {100, 500, 200};
 		String codigoProducto="A10";
 		
 		// act- accion
